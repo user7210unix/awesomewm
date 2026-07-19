@@ -40,5 +40,7 @@ Includes configurations for **Alacritty** and **Rofi**.
 # Clone this repo
 git clone https://github.com/user7210unix/awesomewm.git ~/.config/awesome
 
+sudo pacman -S terminus-font
+
 # (Optional) Backup old config
 mv ~/.config/awesome ~/.config/awesome.bak 2>/dev/null || true
