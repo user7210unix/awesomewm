@@ -34,6 +34,10 @@ Includes configurations for **Alacritty** and **Rofi**.
 - Alacritty terminal config
 - Easy to customize
 
+## Misc
+- Cursor > ![KDE Classic HD](https://store.kde.org/p/2005145)
+- Icons > ![Haiku Icons](https://www.gnome-look.org/p/2087825)
+
 ## Installation
 
 ```bash
