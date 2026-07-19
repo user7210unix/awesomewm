@@ -1,0 +1,371 @@
+/* ==UserStyle==
+@name         dark blue 4chan
+@version      20260711.13.47
+@namespace    https://boards.4chan.org
+@description  4chan navy theme
+@homepage     https://boards.4chan.org/
+@author       user7210unix
+@license      MIT
+==/UserStyle== */
+
+@-moz-document domain("4chan.org"), domain("4channel.org") {
+/* ---------------------------------------------------------
+   PALETTE 
+   121495 - page background
+   1315A5 - reply box / header bar / post form
+   00008D - borders
+   3B44BB - highlighted / targeted post
+   00000E - darkest navy, used only for input/textarea fields
+            so they read as recessed against the 121495 page
+   000000 - pure black, banner frame + absbot only
+   FFFFFF - text (missing from the palette export, matched by
+            eye against the screenshot)
+   op bg  - transparent (shows the page background through)
+--------------------------------------------------------- */
+
+:root {
+  --fc-bg:        #234C6A !important;
+  --fc-post:      #1a384e !important;
+  --fc-header:    #234C6A !important;
+  --fc-border:    #234C6A !important;
+  --fc-highlight: #234C6A !important;
+  --fc-input-bg:  #234C6A !important;
+  --fc-black:     #234C6A !important;
+  --fc-text:      #D2C1B6 !important;
+}
+
+/* ---------------------------------------------------------
+   NUKE ANY BUILT-IN THEME VARIABLES
+   4chan's front end drives Yotsuba / Yotsuba B / Tomorrow /
+   Photon off of these on <html>. Stomping them here means it
+   doesn't matter which one is selected in Settings, this
+   sheet wins regardless.
+--------------------------------------------------------- */
+html, html.yotsuba, html.yotsuba-b, html.tomorrow, html.photon,
+body, body.yotsuba, body.yotsuba-b, body.tomorrow, body.photon {
+  background: var(--fc-bg) !important;
+  background-image: none !important;
+  color: var(--fc-text) !important;
+}
+
+/* ---------------------------------------------------------
+   FONT — plain Arial/Helvetica, no smoothing, no shadows.
+--------------------------------------------------------- */
+html, body, table, td, input, textarea, select, button,
+div.post, div.postInfo, blockquote.postMessage, span, a, p, li {
+  font-family: Terminus, sans-serif !important;
+  font-size: 10pt !important;
+  text-shadow: none !important;
+  box-shadow: none !important;
+  border-radius: 0 !important;
+  -webkit-font-smoothing: none !important;
+  -moz-osx-font-smoothing: unset !important;
+  text-rendering: optimizeSpeed !important;
+  letter-spacing: normal !important;
+}
+
+* {
+  box-shadow: none !important;
+  border-radius: 0 !important;
+  text-shadow: none !important;
+  transition: none !important;
+  animation: none !important;
+}
+
+/* ---------------------------------------------------------
+   BOARD BANNER / HEADER
+--------------------------------------------------------- */
+div.boardBanner {
+  background: var(--fc-header) !important;
+  border: 1px solid var(--fc-border) !important;
+  padding: 4px !important;
+}
+
+#bannerCnt, .contestBanner, img[src*="contest_banners"],
+img[src*="/image/title/"] {
+  display: none !important;
+}
+
+div.boardBanner > div.boardTitle {
+  font-family: Arial, Helvetica, sans-serif !important;
+  color: var(--fc-text) !important;
+  text-shadow: none !important;
+}
+
+div.boardBanner > div.boardSubtitle {
+  color: var(--fc-text) !important;
+}
+
+div#boardNavDesktop, div#boardNavDesktopFoot, div#boardNavMobile,
+.persistentNav {
+  background: transparent !important;
+  color: var(--fc-text) !important;
+}
+
+div#boardNavDesktop a, div#boardNavDesktopFoot a, div#boardNavMobile a {
+  color: var(--fc-text) !important;
+  font-weight: normal !important;
+}
+
+/* ---------------------------------------------------------
+   LINKS
+--------------------------------------------------------- */
+a, a:visited {
+  color: var(--fc-text) !important;
+  text-decoration: none !important;
+}
+
+a:hover {
+  color: #ff4136 !important;
+}
+
+.quoteLink, .quotelink, .deadlink {
+  color: #8DA0FF !important;
+  text-decoration: underline !important;
+}
+
+.deadlink {
+  text-decoration: line-through !important;
+}
+
+/* ---------------------------------------------------------
+   POSTS
+--------------------------------------------------------- */
+div.op, div.opContainer {
+  background: transparent !important;
+}
+
+div.reply {
+  background: var(--fc-post) !important;
+  border: 1px solid var(--fc-border) !important;
+  border-left: none !important;
+  border-top: none !important;
+  color: var(--fc-text) !important;
+}
+
+.reply:target, .reply.highlight, .highlightPost:not(.op) {
+  background: var(--fc-highlight) !important;
+  border: 1px solid var(--fc-border) !important;
+  border-left: none !important;
+  border-top: none !important;
+}
+
+div.post div.postInfo span.subject {
+  color: #ff7a7a !important;
+  font-weight: bold !important;
+}
+
+div.post div.postInfo span.nameBlock span.name {
+  color: #9fe6a0 !important;
+  font-weight: bold !important;
+}
+
+div.post div.postInfo span.nameBlock span.postertrip {
+  color: #9fe6a0 !important;
+}
+
+div.post div.postInfo span.postNum a {
+  color: var(--fc-text) !important;
+}
+
+blockquote > span.quote {
+  color: #9fd66a !important;
+}
+
+blockquote.postMessage {
+  color: var(--fc-text) !important;
+}
+
+span.summary, .omittedposts, .abbr {
+  color: #c7cdf5 !important;
+}
+
+table.exif td {
+  color: #c7cdf5 !important;
+}
+
+/* ---------------------------------------------------------
+   PAGE LIST / FOOTER
+--------------------------------------------------------- */
+div.pagelist {
+  background: var(--fc-header) !important;
+  border-right: 1px solid var(--fc-border) !important;
+  border-bottom: 1px solid var(--fc-border) !important;
+  color: var(--fc-text) !important;
+}
+
+div.pagelist strong {
+  color: #ffffff !important;
+}
+
+div.pagelist div.cataloglink {
+  border-left: 1px solid var(--fc-border) !important;
+}
+
+hr {
+  border-top: 1px solid var(--fc-border) !important;
+}
+
+div#absbot {
+  color: var(--fc-text) !important;
+}
+
+/* ---------------------------------------------------------
+   POST FORM — always expanded, no toggle link, no checkboxes
+--------------------------------------------------------- */
+#postForm, table.postForm {
+  display: block !important;
+  background: var(--fc-post) !important;
+}
+
+#togglePostFormLink {
+  display: none !important;
+}
+
+table.postForm > tbody > tr > td:first-child, .postblock {
+  background: var(--fc-header) !important;
+  color: var(--fc-text) !important;
+  border: 1px solid var(--fc-border) !important;
+}
+
+input[type=text], input[type=password], textarea, #recaptcha_response_field {
+  background: var(--fc-input-bg) !important;
+  color: var(--fc-text) !important;
+  border: 1px solid var(--fc-border) !important;
+}
+
+input[type=text]:focus, input[type=password]:focus, textarea:focus {
+  border: 1px solid var(--fc-highlight) !important;
+}
+
+/* hide every checkbox: post select, file-only, spoiler toggle, etc. */
+input[type=checkbox], label:has(> input[type=checkbox]) {
+  display: none !important;
+}
+
+/* ---------------------------------------------------------
+   ADS / SPONSORED JUNK — strip every known ad container
+--------------------------------------------------------- */
+.adg-rects, .adg, .adg-m, .adg-rep,
+.adp-228, .adp-90, .adp-128, .adp-j, .adp-50, .adp-250, .adp-row,
+.adl, .ad-bgls, .danbo-slot, .bsa-cnt, #t-root,
+.adc-resp, .adc-resp-bg, .belowLeaderboard, .aboveMidAd,
+img.topad, img.middlead, img.bottomad,
+.topad, .middlead, .bottomad,
+.arc-ads, .ad-plea, .nwsb, #ad-des-1, .jla-it, .jla-it-p {
+  display: none !important;
+}
+
+/* ---------------------------------------------------------
+   DISCLAIMER / MODAL — flatten to match palette if it appears
+--------------------------------------------------------- */
+#disclaimer-modal {
+  background: var(--fc-post) !important;
+  color: var(--fc-text) !important;
+  box-shadow: none !important;
+}
+
+#disclaimer h3 {
+  border-bottom: 1px solid var(--fc-border) !important;
+}
+
+/* ===========================================================
+   4chan-neXT SUPPORT
+   (successor to 4chan X — github.com/cercos/4chan-neXT)
+   neXT renders the same base post markup as vanilla 4chan, so
+   everything above already applies to it. This section only
+   covers neXT's own variable-driven layer: highlight colors,
+   the active-theme root classes, the QR live preview, and the
+   board-list sidebar it adds that vanilla 4chan doesn't have.
+   =========================================================== */
+
+:root,
+:root.yotsuba, :root.yotsuba-b, :root.tomorrow, :root.spooky,
+:root.photon, :root.futaba, :root.burichan {
+  /* base text/link/quote colors */
+  --xt-text-color: var(--fc-text) !important;
+  --xt-link-text-color: var(--fc-text) !important;
+  --xt-quote-text-color: #9fd66a !important;
+  --xt-dead-link-text-color: #8DA0FF !important;
+
+  /* (You) / own-post / ghost highlight edges */
+  --xt-border-highlight: var(--fc-highlight) !important;
+  --xt-highlight-you: var(--fc-highlight) !important;
+  --xt-highlight-own: var(--fc-border) !important;
+  --xt-highlight-ghost: #555555 !important;
+  --xt-highlight-edge-width: 3px !important;
+
+  /* filter / ID-highlight / quote-preview flash tints, blue-shifted
+     to fit a dark navy theme instead of neXT's default red family */
+  --xt-filter-highlight: rgba(59, 68, 187, .55) !important;
+  --xt-highlight-shadow: rgba(59, 68, 187, .55) !important;
+  --xt-highlight-side-arrow: rgba(59, 68, 187, .8) !important;
+  --xt-qphl: rgba(141, 160, 255, .8) !important;
+
+  /* catalog tile highlights */
+  --xt-catalog-own-highlight: var(--fc-border) !important;
+  --xt-catalog-watched-highlight: var(--fc-highlight) !important;
+
+  /* Quick Reply live preview accent */
+  --xt-qr-preview-accent: var(--fc-highlight) !important;
+}
+
+/* Per-highlight text/link/quote colors — only read once neXT's
+   "custom text colors" setting is switched on for that highlight */
+:root.xt-custom-text-colors {
+  --xt-highlight-you-text: var(--fc-text) !important;
+  --xt-highlight-you-link: var(--fc-text) !important;
+  --xt-highlight-you-quote: #9fd66a !important;
+  --xt-highlight-you-dead-link: #8DA0FF !important;
+  --xt-highlight-own-text: var(--fc-text) !important;
+  --xt-highlight-own-link: var(--fc-text) !important;
+  --xt-highlight-own-quote: #9fd66a !important;
+  --xt-highlight-own-dead-link: #8DA0FF !important;
+}
+
+/* Quick Reply comment preview post shell */
+.postContainer.qr-preview-post,
+.qr-preview-post > .reply {
+  background: var(--fc-post) !important;
+  border-color: var(--fc-border) !important;
+  color: var(--fc-text) !important;
+}
+
+.qr-preview-float {
+  filter: none !important;
+}
+
+/* Named filter highlights (`highlight:NAME` in a neXT filter) —
+   left as a thin blue edge instead of neXT's default gold, so a
+   custom filter still reads as "this theme" rather than a foreign
+   accent color */
+.filter-highlight.opContainer,
+.filter-highlight > .reply {
+  box-shadow: inset 5px 0 var(--fc-highlight) !important;
+}
+
+/* neXT's board-list sidebar — vanilla 4chan has no equivalent, so
+   when neXT is installed, theme its native one instead of the
+   companion userscript's sidebar below */
+#board-list {
+  background: var(--fc-bg) !important;
+  color: var(--fc-text) !important;
+  border-color: var(--fc-border) !important;
+}
+
+#board-list a {
+  color: var(--fc-text) !important;
+}
+
+#board-list a.current {
+  color: #ff4136 !important;
+  font-weight: bold !important;
+}
+
+/* Settings dialog — keep it from reverting to a light theme box */
+#fourchanx-settings, .dialog {
+  background: var(--fc-bg) !important;
+  color: var(--fc-text) !important;
+  border-color: var(--fc-border) !important;
+}
+}
