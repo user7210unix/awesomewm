@@ -35,8 +35,8 @@ Includes configurations for **Alacritty** and **Rofi**.
 - Easy to customize
 
 ## Misc
-- Cursor > ![KDE Classic HD](https://store.kde.org/p/2005145)
-- Icons > ![Haiku Icons](https://www.gnome-look.org/p/2087825)
+- Cursor > https://store.kde.org/p/2005145
+- Icons >  https://www.gnome-look.org/p/2087825
 
 ## Installation
 
