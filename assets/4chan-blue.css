@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name         dark blue 4chan
-@version      20260711.13.47
+@version      20260711.13.48
 @namespace    https://boards.4chan.org
 @description  4chan navy theme
 @homepage     https://boards.4chan.org/
@@ -9,7 +9,19 @@
 ==/UserStyle== */
 
 @-moz-document domain("4chan.org"), domain("4channel.org") {
-
+/* ---------------------------------------------------------
+   PALETTE 
+   121495 - page background
+   1315A5 - reply box / header bar / post form
+   00008D - borders
+   3B44BB - highlighted / targeted post
+   00000E - darkest navy, used only for input/textarea fields
+            so they read as recessed against the 121495 page
+   000000 - pure black, banner frame + absbot only
+   FFFFFF - text (missing from the palette export, matched by
+            eye against the screenshot)
+   op bg  - transparent (shows the page background through)
+--------------------------------------------------------- */
 
 :root {
   --fc-bg:        #234C6A !important;
@@ -240,10 +252,17 @@ input[type=checkbox], label:has(> input[type=checkbox]) {
 .adc-resp, .adc-resp-bg, .belowLeaderboard, .aboveMidAd,
 img.topad, img.middlead, img.bottomad,
 .topad, .middlead, .bottomad,
-.arc-ads, .ad-plea, .nwsb, #ad-des-1, .jla-it, .jla-it-p {
+.arc-ads, .ad-plea, .nwsb, #ad-des-1, .jla-it, .jla-it-p, span.stub-icon, span.name {
   display: none !important;
 }
 
+/* Banner text */
+div.boardBanner > div.boardTitle {
+  font-family: 'Terminus' !important;
+  color: var(--fc-text) !important;
+  text-shadow: none !important;
+}
+    
 /* ---------------------------------------------------------
    DISCLAIMER / MODAL — flatten to match palette if it appears
 --------------------------------------------------------- */
