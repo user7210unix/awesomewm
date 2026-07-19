@@ -1,0 +1,99 @@
+/*
+ * Win9x-flavoured rofi theme — deep-blue palette edition.
+ * Sunken search field, raised list rows, hard square corners, cream select bar.
+ * Usage: rofi -show drun -theme ~/.config/rofi/config.rasi
+ */
+
+* {
+    face-dark:   #1B3C53;
+    face:        #234C6A;
+    face-light:  #456882;
+    accent:      #D2C1B6;
+
+    background-color: transparent;
+    text-color:       @accent;
+    font:             "Terminus 12";
+}
+
+window {
+    width: 440px;
+    background-color: @face;
+    border: 1px;
+    adding: 2px;
+    location: north;
+    anchor: north;
+    y-offset: 30px;
+}
+
+mainbox {
+    background-color: @face;
+    padding: 2px;
+    children: [ "inputbar", "listview" ];
+    spacing: 4px;
+}
+
+inputbar {
+    background-color: @face;
+    text-color: @accent;
+    padding: 4px 5px;
+    border: 1px;
+    children: [ "prompt", "entry" ];
+    spacing: 6px;
+}
+
+prompt {
+    background-color: transparent;
+    text-color: @accent;
+    font: "Terminus Bold 12";
+}
+
+entry {
+    background-color: transparent;
+    text-color: @accent;
+    placeholder: "Type to search...";
+    placeholder-color: @face-light;
+}
+
+listview {
+    background-color: @face;
+    lines: 8;
+    columns: 1;
+    spacing: 1px;
+    fixed-height: true;
+    border: 0px;
+}
+
+element {
+    background-color: @face;
+    text-color: @accent;
+    padding: 4px 5px;
+    border: 1px;
+}
+
+element normal.normal {
+    background-color: @face;
+    text-color: @accent;
+}
+
+element selected.normal {
+    background-color: @accent;
+    text-color: @face-dark;
+
+}
+
+element-text {
+    background-color: transparent;
+    text-color: inherit;
+    vertical-align: 0.5;
+}
+
+element-icon {
+    size: 16px;
+    vertical-align: 0.5;
+}
+
+scrollbar {
+    width: 8px;
+    handle-color: @face-dark;
+    background-color: @face-light;
+}
